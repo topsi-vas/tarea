@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Numero mayor</h2>
+<label for="">Ingrese el numero 1:</label>
+<input class="numero1" type="text">
+<label for="">Ingrese el numero 2:</label>
+<input class="numero2" type="text">
+<button class="boton">Click para calcular</button>
+    <script>
+        let boton= document.querySelector('.boton');
+        boton.addEventListener('click', function(){
+            let numero1= parseInt(document.querySelector('.numero1').value);
+            let numero2=parseInt(document.querySelector('.numero2').value);
+            if(numero1>numero2){  
+                alert('El numero mayor es:' + numero1);
+            }
+            else{
+                alert('El numero mayor es:'+numero2);
+            }
+        });
+    </script>
+</body>
+</html>

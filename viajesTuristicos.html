@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>seleccione el destino:</h2>
+    <select name="" id="">
+        <option value="COSTADELSOL">LA COSTA DEL SOL</option>
+        <option value="PANCHIMALCO">PANCHIMALCO</option>
+        <option value="PUERTOELTRIUNFO">PUERTO EL TRIUNFO</option>
+    </select>
+
+    <label for="">Ingrese el precio final</label>
+    <input class="precio" type="text">
+    <button class="boton">CLICK PARA DESCUENTO</button>
+    <script>
+        let boton= document.querySelector('.boton');
+        boton.addEventListener('click',()=>{
+            let select=document.querySelector('select');
+            let destino=select.value;
+            let precio=document.querySelector('.precio');
+            let descuento=0;
+            let precioFinal=0;
+            if(destino==='COSTADELSOL'){
+                descuento=parseFloat(precio.value)*0.05;
+            }
+            else if(destino==='PANCHIMALCO'){
+                descuento=parseFloat(precio.value)* 0.10;
+            }
+            else{
+                descuento=parseFloat(precio.value)*0.15;
+            }
+            precioFinal=parseFloat(precio.value)-descuento;
+            alert("el descuento  es de: "+ descuento);
+            alert("el descuento  es de: "+ precioFinal);
+        })
+    </script>
+</body>
+</html>

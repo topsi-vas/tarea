@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="">
+        <option value="FORDFIESTA">FORD FIESTA</option>
+        <option value="FORDFOCUS">FORD FOCUS</option>
+        <option value="FORDESCAPE">FORD ESCAPE</option>
+    </select>
+
+    <label for="">Ingrese el precio del carro</label>
+    <input class="precio" type="text">
+    <button class="boton">CLICK PARA PRECIO DEL CARRO</button>
+    <script>
+        let boton= document.querySelector('.boton');
+        boton.addEventListener('click',()=>{
+            let select=document.querySelector('select');
+            let carro=select.value;
+            let precio=document.querySelector('.precio');
+            let descuento=0;
+            let precioFinal=0;
+            if(carro==='FORDFIESTA'){
+                descuento=parseFloat(precio.value)*0.05;
+            }
+            else if(carro==='FORDFOCUS'){
+                descuento=parseFloat(precio.value)* 0.10;
+            }
+            else{
+                descuento=parseFloat(precio.value)*0.20;
+            }
+            precioFinal=parseFloat(precio.value)-descuento;
+            alert("el precio final del carro es de: "+ precioFinal);
+        })
+    </script>
+</body>
+</html>

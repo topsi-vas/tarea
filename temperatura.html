@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>conversión de temperatura</h2>
+<label for="">Ingrese temperatura en celsius:</label>
+<input type="text">
+<button class="boton">Click para convertir</button>
+    <script>
+        let boton= document.querySelector('.boton');
+        boton.addEventListener('click', function(){
+            let temperatura= parseFloat( document.querySelector('input').value);
+            let fahrenheit;
+            fahrenheit=(temperatura * 9/5) +32;
+            if(fahrenheit>=14 && fahrenheit<=32){  
+                alert('temperatura Baja');
+            }
+            else if(fahrenheit>32 && fahrenheit<=68){
+                alert('temperatura adecuada');
+            }
+            else if(fahrenheit>68 && fahrenheit<=96){
+                alert('temperatura Valida');
+            }
+            else{
+                alert('temperatura desconocida');
+            }
+        });
+    </script>
+</body>
+</html>

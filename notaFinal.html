@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Ingrese el nombre del estudiante:</label>
+    <input class="nombre" type="text">
+    <label for="">Ingrese el carné del estudiante:</label>
+    <input class="carne" type="text">
+    <label for="">Ingrese la nota del examen:</label>
+    <input class="examen" type="text">
+    <label for="">Ingrese nota de tareas:</label>
+    <input class="tareas" type="text">
+    <label for="">Ingrese nota de asistencia:</label>
+    <input class="asistencia" type="text">
+    <label for="">Ingrese nota de investigación:</label>
+    <input class="investigacion" type="text">
+    <button class="calcular">click para ver nota final</button>
+    <script>
+        let calculo= document.querySelector('.calcular');
+        calculo.addEventListener('click',()=>{
+            let nombre = document.querySelector('.nombre').value;
+            let carne=document.querySelector('.carne').value;
+            let examen=parseInt(document.querySelector('.examen').value) ;
+            let tareas=parseFloat(document.querySelector('.tareas').value);
+            let asistencia=parseFloat(document.querySelector('.asistencia').value) ;
+            let investigacion=parseFloat(document.querySelector('.investigacion').value) ;
+            let notaFinal;
+            notaFinal=examen + tareas+ asistencia + investigacion ;
+            alert("su nombre es:" + nombre);
+            alert("su carné es: "+ carne);
+            alert("la nota final es de: "+ notaFinal);
+        })
+    </script>
+</body>
+</html>

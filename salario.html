@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Ingrese su nombre:</label>
+    <input class="nombre" type="text">
+    <label for="">Ingrese su salario</label>
+    <input class="salario" type="text">
+    <select  id="">
+        <option value="A">A=15%</option>
+        <option value="B">B=30%</option>
+        <option value="C">C=10%</option>
+        <option value="D">A=20%</option>
+    </select>
+    <button class="calcular">Calcular Sueldo</button>
+    <script>
+        let calcular=document.querySelector('.calcular');
+        calcular.addEventListener('click',function(){
+            let nombre=document.querySelector('.nombre').value;
+            let salario=parseFloat(document.querySelector('.salario').value);
+            let select=document.querySelector('select');
+            let aumento=0
+            let sueldoTotal=0;
+            let tipos=select.options[select.selectedIndex];
+            if(tipos.value=="A"){
+                aumento=salario*0.15;
+            }
+            else if(tipos.value=="B"){
+                aumento= salario * 0.3;
+            }
+            else if(tipos.value=="C"){
+                aumento=salario*.10;
+            }
+            else{
+                aumento=salario*0.20
+            }
+            sueldoTotal= salario + aumento;
+            alert("su aumento es de:" + aumento);
+            alert("su sueldo total es de: "+ sueldoTotal);
+        });
+    </script>
+</body>
+</html>

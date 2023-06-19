@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <button class="calcular">Calcular Sueldo</button>
+    <script>
+        let numero;
+        let arreglo=[];
+        let negativos=[];
+        let positivos=[];
+        let multiplos15=[];
+        let pares=[];
+        let calcular=document.querySelector('.calcular');
+        calcular.addEventListener('click',function(){
+            for(let i=0; i<10;i++){
+                numero = parseInt( prompt("ingrese el valor"));
+                arreglo.push(numero);
+            }
+            for(let i=0; i<10;i++){
+               if(arreglo[i]<0){
+                negativos.push(arreglo[i]);
+               }
+               if(arreglo[i]>=0){
+                positivos.push(arreglo[i]);
+               }
+               if(arreglo[i]%15==0){
+                multiplos15.push(arreglo[i]);
+               }
+               if(arreglo[i]%2==0){
+                pares.push(arreglo[i]);
+               }
+
+            }
+            
+            for(let i=0; i<positivos.length;i++){
+               console.log("valores positivos:"+ positivos[i]);
+            }
+            for(let i=0; i<negativos.length;i++){
+               console.log("valores negativos:"+ negativos[i]);
+            }
+            for(let i=0; i<multiplos15.length;i++){
+               console.log("valores multiplos de 15:"+ multiplos15[i]);
+            }
+            for(let i=0; i<pares.length;i++){
+               console.log("valores pares:"+ pares[i]);
+            }
+
+
+
+          
+          
+        });
+    </script>
+</body>
+</html>
